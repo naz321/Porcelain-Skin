@@ -9,6 +9,7 @@
   const express = require('express');
   const multer = require('multer');
   const bodyParser = require('body-parser');
+  var spawn = require("child_process").spawn; 
 
   // SETUP APP
   const app = express();
@@ -70,13 +71,30 @@
       //Here is where I could add functions to then get the url of the new photo
       //And relocate that to a cloud storage solution with a callback containing its new url
       //then ideally loading that into your database solution.   Use case - user uploading an avatar...
-      var fileName = req.file.originalname;
-      var filePath = req.file.path;
-      res.send('Complete! Check out your public/photo-storage folder.  Please note that files not encoded with an image mimetype are rejected. <a href="index.html">try again</a>');
-  }
+      var fileName = str(req.file.originalname);
+      var filePath = str(req.file.path);
+      var imgWithPath = fileName + filePath
+      //conda py env path is /Users/mo/opt/anaconda3/envs/cp322/bin/python
+      var myCondaEnv =  "/Users/mo/opt/anaconda3/envs/cp322/bin/python"     
+      // Parameters passed in spawn - 
+      // 1. type_of_script 
+      // 2. list containing Path of the script 
+      //    and arguments for the script  
 
-);
+      // E.g : http://localhost:3000/name?firstname=Mike&lastname=Will 
+      // so, first name = Mike and last name = Will 
+      var process = spawn(myCondaEnv,["./testScript.py", "Mo", 
+      "Haider"]); 
 
+      // Takes stdout data from script which executed 
+      // with arguments and send this data to res object 
+      process.stdout.on('data', function(data) { 
+      res.send(data.toString()); 
+
+      //res.send('Complete! Check out your public/photo-storage folder.  Please note that files not encoded with an image mimetype are rejected. <a href="index.html">try again</a>');
+      }
+      );
+  });
   // RUN SERVER
   app.listen(port,function(){
     console.log(`Server listening on port ${port}`);
