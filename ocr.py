@@ -10,7 +10,6 @@ import os
 ap = argparse.ArgumentParser()
 # --image is the path to the image we are sending through the OCR system
 ap.add_argument("-i", "--image", required=True, help="path to input image to be OCR'd")
-#ap.add_argument("-p", "--preprocess", type=str, default="blur", help="type of preprocessing to be done")
 args = vars(ap.parse_args())
 
 image = cv2.imread(args["image"])
