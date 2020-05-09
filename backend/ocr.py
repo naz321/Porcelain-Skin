@@ -21,6 +21,9 @@ filename = "{}.png".format(os.getpid())
 cv2.imwrite(filename, src)
 
 text = pytesseract.image_to_string(Image.open(filename))
+text = text.replace('\n', '')
+text = text.split(",")
+
 os.remove(filename)
 print(text)
 

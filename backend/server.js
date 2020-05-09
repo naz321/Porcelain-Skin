@@ -75,9 +75,9 @@
       var filePath = req.file.path;
       //var imgWithPath = filePath + fileName
 
-      
-      //conda py env path is /Users/mo/opt/anaconda3/envs/cp322/bin/python
-      var myCondaEnv =  "/Users/mo/opt/anaconda3/envs/cp322/bin/python"     
+      // var myCondaEnv =  "/Users/nazibahaider/opt/anaconda3/envs/porcelain-py--env/bin/python"     
+      // var myCondaEnv =  "/Users/mo/opt/anaconda3/envs/cp322/bin/python"     
+      var myCondaEnv =  "/Users/nazibahaider/opt/anaconda3/envs/porcelain-py--env/bin/python"     
       // Parameters passed in spawn - 
       // 1. type_of_script 
       // 2. list containing Path of the script 
