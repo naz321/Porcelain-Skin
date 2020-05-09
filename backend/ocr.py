@@ -4,7 +4,7 @@ import sys
 import pytesseract
 import argparse
 import os
-
+import json
 
 
 ap = argparse.ArgumentParser()
@@ -22,8 +22,19 @@ cv2.imwrite(filename, src)
 
 text = pytesseract.image_to_string(Image.open(filename))
 text = text.replace('\n', '')
+text = text.lower()
+text = text.replace(', ', ',')
 text = text.split(",")
-
+#print(text)
 os.remove(filename)
-print(text)
 
+f = open('data.json')
+data = json.load(f)
+
+for i in text:
+    if (i in data):
+        print("Ingredient: " + i)
+        print(data[i])
+
+
+f.close()
