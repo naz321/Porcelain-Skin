@@ -18,6 +18,11 @@
   app.use(bodyParser.json());
   app.use('/', express.static(__dirname + '/public'));
 
+  //app.use('/', express.static('./static/'))
+  
+  //file writer
+  const fs = require('fs');
+
 
 
   //MULTER CONFIG: to get file photos to temp server storage
@@ -75,8 +80,8 @@
       var filePath = req.file.path;
       //var imgWithPath = filePath + fileName
 
-      var myCondaEnv =  "/Users/nazibahaider/opt/anaconda3/envs/porcelain-py--env/bin/python"     
-      //var myCondaEnv =  "/Users/mo/opt/anaconda3/envs/cp322/bin/python"     
+      //var myCondaEnv =  "/Users/nazibahaider/opt/anaconda3/envs/porcelain-py--env/bin/python"     
+      var myCondaEnv =  "/Users/mo/opt/anaconda3/envs/cp322/bin/python"     
    
       // Parameters passed in spawn - 
       // 1. type_of_script 
@@ -90,9 +95,18 @@
       // Takes stdout data from script which executed 
       // with arguments and send this data to res object 
       process.stdout.on('data', function(data) {
-        res.send(data.toString()); 
-      }
-      );
+        fs.writeFile("./finalResult.txt", data.toString(), function(err) {
+          if(err) {
+              return console.log(err);
+          }
+          console.log("The file was saved!");
+        }); 
+        //res.send(data.toString()); 
+      });
+      res.sendFile('/Users/mo/Documents/Porcelain/Porcelain/backend/public/static/result.html' );
+      res.sendFile('/Users/mo/Documents/Porcelain/Porcelain/backend/public/static/result.js')
+      
+
   });
   // RUN SERVER
   app.listen(port,function(){
