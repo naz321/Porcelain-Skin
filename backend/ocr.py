@@ -25,16 +25,17 @@ text = text.replace('\n', '')
 text = text.lower()
 text = text.replace(', ', ',')
 text = text.split(",")
-#print(text)
 os.remove(filename)
 
 f = open('data.json')
-data = json.load(f)
-
+datafile = f.read()
+data = json.loads(datafile)
+name = text[1]
+finalInfo = ""
 for i in text:
     if (i in data):
-        print("Ingredient: " + i)
-        print(data[i])
+        my_info = "Ingredient: " + i + '\n' + "Rating: " + data[i][0]['Rating'] + '\n' + "Description: " + data[i][0]['Description'] + '\n'
+        finalInfo = finalInfo + my_info + '\n'
 
-
+print(finalInfo)
 f.close()
