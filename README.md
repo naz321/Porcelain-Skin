@@ -5,4 +5,4 @@ Porcelain is an application that identifies harmful ingredients in skincare prod
 
 Techonologies Used to Build Porcelain
 - Python's Beautiful Soup for scraping the ingredients table from Paula's Choice
-- An Optical Character Recognition script to convert the image to readable text written using OpenCV and Tesseract 
+- An Optical Character Recognition script to convert the image to readable text using OpenCV and Tesseract 
