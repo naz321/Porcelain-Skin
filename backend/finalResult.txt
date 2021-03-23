@@ -1,0 +1,53 @@
+Ingredient: water
+Rating: Good
+Description: The most widely used cosmetic ingredient; water is almost always listed first on an ingredient...
+
+Ingredient: myristic acid
+Rating: Good
+Description: Cleansing agent that also creates foam and can be drying.
+
+Ingredient: glycerin
+Rating: Best
+Description: Also called glycerol or glycerine, glycerin is present in all natural lipids (fats), whether animal or vegetable.
+
+Ingredient: sodium methyl cocoyl taurate
+Rating: Good
+Description: Mild surfactant.
+
+Ingredient: palmitic acid
+Rating: Good
+Description: Blend of the fatty acid palmitic acid with several amino acids…
+
+Ingredient: potassium hydroxide
+Rating: Average
+Description: Also known as lye, a highly alkaline ingredient used in small amounts in cosmetics to modulate the...
+
+Ingredient: lauric acid
+Rating: Best
+Description: One of several fatty acids found in coconut oil and other natural fats.
+
+Ingredient: stearic acid
+Rating: Good
+Description: Fatty acid used as an emollient and emulsifier...
+
+Ingredient: linalool
+Rating: Poor
+Description: Fragrant component of lavender and coriander that can be a skin sensitizer, or...
+
+Ingredient: hydrolyzed wheat protein
+Rating: Good
+Description: Protein fraction from wheat that has been hydrolyzed, which is a chemical process involving the...
+
+Ingredient: cetearyl alcohol
+Rating: Good
+Description: Fatty alcohol used as an emollient, emulsifier, thickener, and carrying agent for other...
+
+Ingredient: butylene glycol
+Rating: Good
+Description: Commonly-used ingredient that has multiple functions in cosmetics, including....
+
+Ingredient: methylchloroisothiazolinone
+Rating: Poor
+Description: In combination with methylisothiazolinone, it goes by the trade name Kathon CG (among others)....
+
+
