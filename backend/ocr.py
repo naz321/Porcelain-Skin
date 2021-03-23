@@ -20,21 +20,20 @@ src = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 filename = "{}.png".format(os.getpid())
 cv2.imwrite(filename, src)
 
-text = pytesseract.image_to_string(Image.open(filename))
-text = text.replace('\n', '')
-text = text.lower()
-text = text.replace(', ', ',')
-text = text.split(",")
+uploaded_text = pytesseract.image_to_string(Image.open(filename))
+uploaded_text = uploaded_text.replace('\n', '')
+uploaded_text = uploaded_text.lower()
+uploaded_text = uploaded_text.replace(', ', ',')
+uploaded_text = uploaded_text.split(",")
 os.remove(filename)
 
-f = open('data.json')
+f = open('paulas_data.json')
 datafile = f.read()
-data = json.loads(datafile)
-name = text[1]
+paulas_data = json.loads(datafile)
 finalInfo = ""
-for i in text:
-    if (i in data):
-        my_info = "Ingredient: " + i + '\n' + "Rating: " + data[i][0]['Rating'] + '\n' + "Description: " + data[i][0]['Description'] + '\n'
+for ingredient in uploaded_text:
+    if (ingredient in paulas_data):
+        my_info = "Ingredient: " + ingredient + '\n' + "Rating: " + paulas_data[ingredient][0]['Rating'] + '\n' + "Description: " + paulas_data[ingredient][0]['Description'] + '\n'
         finalInfo = finalInfo + my_info + '\n'
 
 print(finalInfo)
